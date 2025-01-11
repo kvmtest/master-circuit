@@ -47,13 +47,6 @@
 			"headers": {
 				"Authorization": "Bearer {{AUTH_TOKEN}}"
 			}
-		},
-		"gemini": {
-			"type": "http",
-			"baseUrl": "https://generativelanguage.googleapis.com/",
-			"headers": {
-				"Authorization": "Bearer {{API_KEY}}"
-			}
 		}
 	},
 	"models": {
@@ -115,12 +108,6 @@
 			"path": "/chat/completions",
 			"provider": "azure",
 			"connection": "GHMplace"
-		},
-		"text-generator11": {
-			"sourceModel": "gemini-1.5-flash",
-			"path": "/chat/completions",
-			"provider": "google",
-			"connection": "gemini"
 		}
 	}
 }

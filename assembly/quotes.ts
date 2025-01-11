@@ -20,7 +20,7 @@ import {
 /**
  * Generate text from a LLM model
  */
-export function generateText(instruction: string, prompt: string): string {
+export function Agent_Llama(instruction: string, prompt: string): string {
   const model = models.getModel<OpenAIChatModel>("text-generator")
 
   const input = model.createInput([new SystemMessage(instruction), new UserMessage(prompt)])
@@ -32,7 +32,7 @@ export function generateText(instruction: string, prompt: string): string {
 }
 
 
-export function generateText_G(prompt: string): string {
+export function Agent_Gemini(prompt: string): string {
   const model = models.getModel<GeminiGenerateModel>("text-generator2")
 
   const input = model.createInput([new UserTextContent(prompt)])
@@ -49,7 +49,7 @@ export function generateText_G(prompt: string): string {
   throw new Error('No candidates generated');
 }
 
-export function generateText_A(prompt: string): string {
+export function Agent_Anthropic(prompt: string): string {
   const model = models.getModel<AnthropicMessagesModel>("text-generator3")
 
   const input = model.createInput([new AssistantMessage(prompt)])
@@ -67,7 +67,7 @@ export function generateText_A(prompt: string): string {
   throw new Error('No content generated');
 }
 
-export function generateText_Q(instruction: string, prompt: string): string {
+export function Agent_Qwen(instruction: string, prompt: string): string {
   const model = models.getModel<OpenAIChatModel>("text-generator4")
 
   const input = model.createInput([new SystemMessage(instruction), new UserMessage(prompt)])
@@ -78,7 +78,7 @@ export function generateText_Q(instruction: string, prompt: string): string {
   return output.choices[0].message.content.trim()
 }
 
-export function generateText_Gq(instruction: string, prompt: string): string {
+export function Agent_Mixtral(instruction: string, prompt: string): string {
   const model = models.getModel<OpenAIChatModel>("text-generator5")
 
   const input = model.createInput([new SystemMessage(instruction), new UserMessage(prompt)])
@@ -89,7 +89,7 @@ export function generateText_Gq(instruction: string, prompt: string): string {
   return output.choices[0].message.content.trim()
 }
 
-export function generateText_J(instruction: string, prompt: string): string {
+export function Agent_Jamba(instruction: string, prompt: string): string {
   const model = models.getModel<OpenAIChatModel>("text-generator6")
 
   const input = model.createInput([new SystemMessage(instruction), new UserMessage(prompt)])
@@ -100,7 +100,7 @@ export function generateText_J(instruction: string, prompt: string): string {
   return output.choices[0].message.content.trim()
 }
 
-export function generateText_O(instruction: string, prompt: string): string {
+export function Agent_GPT4O(instruction: string, prompt: string): string {
   const model = models.getModel<OpenAIChatModel>("text-generator7")
 
   const input = model.createInput([new SystemMessage(instruction), new UserMessage(prompt)])
@@ -111,7 +111,7 @@ export function generateText_O(instruction: string, prompt: string): string {
   return output.choices[0].message.content.trim()
 }
 
-export function generateText_P(instruction: string, prompt: string): string {
+export function Agent_Phi(instruction: string, prompt: string): string {
   const model = models.getModel<OpenAIChatModel>("text-generator8")
 
   const input = model.createInput([new SystemMessage(instruction), new UserMessage(prompt)])
@@ -122,7 +122,7 @@ export function generateText_P(instruction: string, prompt: string): string {
   return output.choices[0].message.content.trim()
 }
 
-export function generateText_C(instruction: string, prompt: string): string {
+export function Agent_Cohere(instruction: string, prompt: string): string {
   const model = models.getModel<OpenAIChatModel>("text-generator9")
 
   const input = model.createInput([new SystemMessage(instruction), new UserMessage(prompt)])
@@ -133,7 +133,7 @@ export function generateText_C(instruction: string, prompt: string): string {
   return output.choices[0].message.content.trim()
 }
 
-export function generateText_MiNe(instruction: string, prompt: string): string {
+export function Agent_MixtralNemo(instruction: string, prompt: string): string {
   const model = models.getModel<OpenAIChatModel>("text-generator10")
 
   const input = model.createInput([new SystemMessage(instruction), new UserMessage(prompt)])
@@ -144,16 +144,6 @@ export function generateText_MiNe(instruction: string, prompt: string): string {
   return output.choices[0].message.content.trim()
 }
 
-export function generateText_GeO(instruction: string, prompt: string): string {
-  const model = models.getModel<OpenAIChatModel>("text-generator11")
-
-  const input = model.createInput([new SystemMessage(instruction), new UserMessage(prompt)])
-
-  input.temperature = 0.7
-  const output = model.invoke(input)
-
-  return output.choices[0].message.content.trim()
-}
 @json
 class Quote {
   @alias("q")
