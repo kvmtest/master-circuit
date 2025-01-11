@@ -11,6 +11,49 @@
 		"zenquotes": {
 			"type": "http",
 			"baseUrl": "https://zenquotes.io/"
+		},
+		"google": {
+			"type": "http",
+			"baseUrl": "https://generativelanguage.googleapis.com/",
+			"headers": {
+				"X-goog-api-key": "{{API_KEY}}"
+			}
+		},
+		"anthropic": {
+			"type": "http",
+			"baseUrl": "https://api.anthropic.com/",
+			"headers": {
+				"x-api-key": "{{API_KEY}}",
+				"anthropic-version": "2023-06-01"
+			}
+		},
+		"sambanova": {
+			"type": "http",
+			"baseUrl": "https://api.sambanova.ai/v1",
+			"headers": {
+				"Authorization": "Bearer {{AUTH_TOKEN}}"
+			}
+		},
+		"groq": {
+			"type": "http",
+			"baseUrl": "https://api.groq.com/openai/v1",
+			"headers": {
+				"Authorization": "Bearer {{AUTH_TOKEN}}"
+			}
+		},
+		"GHMplace": {
+			"type": "http",
+			"baseUrl": "https://models.inference.ai.azure.com",
+			"headers": {
+				"Authorization": "Bearer {{AUTH_TOKEN}}"
+			}
+		},
+		"gemini": {
+			"type": "http",
+			"baseUrl": "https://generativelanguage.googleapis.com/",
+			"headers": {
+				"Authorization": "Bearer {{API_KEY}}"
+			}
 		}
 	},
 	"models": {
@@ -18,6 +61,66 @@
 			"sourceModel": "meta-llama/Meta-Llama-3.1-8B-Instruct",
 			"provider": "hugging-face",
 			"connection": "hypermode"
+		},
+		"text-generator2": {
+			"sourceModel": "gemini-1.5-flash",
+			"path": "v1beta/models/gemini-1.5-flash:generateContent",
+			"provider": "google",
+			"connection": "google"
+		},
+		"text-generator3": {
+			"sourceModel": "claude-3-5-sonnet-20240620",
+			"path": "v1/messages",
+			"provider": "anthropic",
+			"connection": "anthropic"
+		},
+		"text-generator4": {
+			"sourceModel": "Qwen2.5-72B-Instruct",
+			"path": "/chat/completions",
+			"provider": "sambanova",
+			"connection": "sambanova"
+		},
+		"text-generator5": {
+			"sourceModel": "mixtral-8x7b-32768",
+			"path": "/chat/completions",
+			"provider": "groq",
+			"connection": "groq"
+		},
+		"text-generator6": {
+			"sourceModel": "AI21-Jamba-1.5-Large",
+			"path": "/chat/completions",
+			"provider": "azure",
+			"connection": "GHMplace"
+		},
+		"text-generator7": {
+			"sourceModel": "gpt-4o",
+			"path": "/chat/completions",
+			"provider": "azure",
+			"connection": "GHMplace"
+		},
+		"text-generator8": {
+			"sourceModel": "Phi-3.5-MoE-instruct",
+			"path": "/chat/completions",
+			"provider": "azure",
+			"connection": "GHMplace"
+		},
+		"text-generator9": {
+			"sourceModel": "Cohere-command-r-plus-08-2024",
+			"path": "/chat/completions",
+			"provider": "azure",
+			"connection": "GHMplace"
+		},
+		"text-generator10": {
+			"sourceModel": "Mistral-Nemo",
+			"path": "/chat/completions",
+			"provider": "azure",
+			"connection": "GHMplace"
+		},
+		"text-generator11": {
+			"sourceModel": "gemini-1.5-flash",
+			"path": "/chat/completions",
+			"provider": "google",
+			"connection": "gemini"
 		}
 	}
 }

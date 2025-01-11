@@ -9,6 +9,8 @@
     "pretty:check": "prettier --check ."
   },
   "dependencies": {
+    "@google/generative-ai": "^0.21.0",
+    "@hypermode/models-as": "^0.2.4",
     "@hypermode/modus-sdk-as": "^0.16.0",
     "json-as": "^0.9.26"
   },
